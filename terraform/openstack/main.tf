@@ -3,21 +3,21 @@ required_version = ">= 0.14.0"
   required_providers {
     openstack = {
       source  = "terraform-provider-openstack/openstack"
-      version = "~> 1.47.0"
+      version = "~> 1.49.0"
     }
   }
 }
 
 # Configure the OpenStack Provider
 provider "openstack" {
-  user_name         = "<OS_USERNAME>"
-  tenant_name       = "<OS_PROJECT_NAME>"
-  tenant_id         = "<OS_PROJECT_ID>"
+  user_name         = "<nazmi.ozcelik@tubitak.gov.tr>"
+  tenant_name       = "<nazmi.ozcelik@tubitak.gov.tr>"
+  tenant_id         = "<b3820ea588a447d8a90d55c59d0161be>"
   password          = "<OS_PASSWORD>"
-  auth_url          = "<OS_AUTH_URL>"
-  region            = "<OS_REGION_NAME>"
-  user_domain_name  = "<OS_USER_DOMAIN_NAME>"
-  project_domain_id = "<OS_PROJECT_DOMAIN_ID>"
+  auth_url          = "<https://safirbulut.b3lab.org:5000>"
+  region            = "<RegionOne>"
+  user_domain_name  = "<Default>"
+  project_domain_id = "<default>"
 }
 
 resource "openstack_networking_floatingip_v2" "floatip_1" {
@@ -28,14 +28,14 @@ resource "openstack_blockstorage_volume_v3" "volume_1" {
   name        = "volume1-test-server"
   description = "first test volume"
   size        = 20                      # volume size in GB
-  image_id    = "<IMAGE_ID>"            # OS image id
+  image_id    = "<0037e199-3e47-4e79-b317-9cf93626da69>"            # OS image id
 }
 
 # Create a web server
 resource "openstack_compute_instance_v2" "instance_1" {
   name            = "test-server"           # Server name
-  flavor_id       = "<FLAVOR_ID>"           # OS flavor ID
-  key_pair        = "<SSH_KEY_TO_DEPLOY>"   # SSH key provided in OS
+  flavor_id       = "<7dfcc573-a6f8-4487-939f-25ce4b455c8f>"           # OS flavor ID
+  key_pair        = "<76:a9:06:f5:5f:50:98:55:be:06:6f:4a:0a:f6:31:59>"   # SSH key provided in OS
   security_groups = ["default"]
 
   network {
