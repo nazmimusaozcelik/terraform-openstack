@@ -14,7 +14,7 @@ provider "openstack" {
   tenant_name       = "<nazmi.ozcelik@tubitak.gov.tr>"
   tenant_id         = "<b3820ea588a447d8a90d55c59d0161be>"
   password          = "<OS_PASSWORD>"
-  auth_url          = "<https://safirbulut.b3lab.org:5000>"
+  auth_url          = "<https://safivdfvfd.dvfvfv.org:5000>"
   region            = "<RegionOne>"
   user_domain_name  = "<Default>"
   project_domain_id = "<default>"
